@@ -7,13 +7,33 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
+    
+
+    @IBOutlet weak var foodItemsPickerView: UIPickerView!
+    
+    var pickerData:[String] = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+       
+
+        self.foodItemsPickerView.delegate = self
+        self.foodItemsPickerView.dataSource = self
+        
+        pickerData = ["num 1","num 2","num 3"]
     }
-
-
+//    override func didReceiveMemoryWarning() {
+//            super.didReceiveMemoryWarning()
+//    }
+    extension ViewController: UIPickerViewDataSource{
+        
+    }
+    extension ViewController: UIPickerViewDelegate{
+        
+    }
 }
 
