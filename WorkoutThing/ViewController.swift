@@ -7,8 +7,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
+    
     var foods : [FoodItems] = []
+class ViewController: UIViewController{
+
+    
+
+    @IBOutlet weak var foodItemsPickerView: UIPickerView!
+    
+    var pickerData:[String] = [String]()
+    
+    
     override func viewDidLoad() {
         foods.append(FoodItems.init(foods: "Steak", cals: 679))
         foods.append(FoodItems.init(foods: "Chicken", cals: 231))
@@ -19,11 +29,25 @@ class ViewController: UIViewController {
         foods.append(FoodItems.init(foods: "Potatoes(Per Potato)", cals: 163))
         foods.append(FoodItems.init(foods: "Spaghetti", cals: 221))
         foods.append(FoodItems.init(foods: "Ham(Per Slice)", cals: 263))
-        foods.append(FoodItems.init(foods: "Ramen", cals: 188))
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+      
+
+
         
         
+       
+
+        self.foodItemsPickerView.delegate = self
+        self.foodItemsPickerView.dataSource = self
+        
+        pickerData = ["num 1","num 2","num 3"]
+    }
+//    override func didReceiveMemoryWarning() {
+//            super.didReceiveMemoryWarning()
+//    }
+    extension ViewController: UIPickerViewDataSource{
+        
+    }
+    extension ViewController: UIPickerViewDelegate{
         
 
 
