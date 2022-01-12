@@ -12,6 +12,8 @@ class ViewController: UIViewController{
     
     @IBOutlet weak var foodItemsPickerView: UIPickerView!
     
+    @IBOutlet weak var dailyCalories: UILabel!
+    
     var pickerData:[String] = [String]()
     
     override func viewDidLoad() {
@@ -39,7 +41,8 @@ class ViewController: UIViewController{
     }
     extension ViewController: UIPickerViewDelegate{
         
-
-
     }
+    
+    dailyCalories.text = ""
+    
 }
