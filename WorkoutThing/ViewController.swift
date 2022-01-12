@@ -24,6 +24,7 @@ class ViewController: UIViewController{
         foods.append(FoodItems.init(foods: "Potatoes(Per Potato)", cals: 163))
         foods.append(FoodItems.init(foods: "Spaghetti", cals: 221))
         foods.append(FoodItems.init(foods: "Ham(Per Slice)", cals: 263))
+        foods.append(FoodItems.init(foods: "Cup Ramen", cals: 188))
       
         self.foodItemsPickerView.delegate = self
         self.foodItemsPickerView.dataSource = self
