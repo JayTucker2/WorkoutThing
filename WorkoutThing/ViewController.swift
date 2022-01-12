@@ -8,16 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController{
-    
     var foods : [FoodItems] = []
-class ViewController: UIViewController{
-
     
-
     @IBOutlet weak var foodItemsPickerView: UIPickerView!
     
     var pickerData:[String] = [String]()
-    
     
     override func viewDidLoad() {
         foods.append(FoodItems.init(foods: "Steak", cals: 679))
@@ -30,12 +25,6 @@ class ViewController: UIViewController{
         foods.append(FoodItems.init(foods: "Spaghetti", cals: 221))
         foods.append(FoodItems.init(foods: "Ham(Per Slice)", cals: 263))
       
-
-
-        
-        
-       
-
         self.foodItemsPickerView.delegate = self
         self.foodItemsPickerView.dataSource = self
         
