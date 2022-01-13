@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController{
     var foods : [FoodItems] = []
+    var dailies = 0
     
     @IBOutlet weak var foodItemsPickerView: UIPickerView!
     
@@ -43,6 +44,6 @@ class ViewController: UIViewController{
         
     }
     
-    dailyCalories.text = ""
+    dailyCalories.text = "\(dailies)"
     
 }
