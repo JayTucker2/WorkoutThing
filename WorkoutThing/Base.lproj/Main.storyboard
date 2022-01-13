@@ -34,6 +34,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Labekl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wb-sF-ZJa">
+                                <rect key="frame" x="125" y="513" width="148" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -41,7 +48,8 @@
                     <tabBarItem key="tabBarItem" title="Calorie Tracker" id="hoX-X4-MNf"/>
                     <connections>
                         <outlet property="dailyCalories" destination="rZW-lf-pao" id="faJ-IU-Txv"/>
-                        <outlet property="foodItemsPickerView" destination="gZz-0u-odQ" id="9jt-z7-7Fc"/>
+                        <outlet property="foodItemsPickerView" destination="gZz-0u-odQ" id="Uch-8A-So3"/>
+                        <outlet property="testLabel" destination="4wb-sF-ZJa" id="6xs-MH-Sbb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

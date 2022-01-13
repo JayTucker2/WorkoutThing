@@ -13,6 +13,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var dailies = 0
     
     @IBOutlet weak var dailyCalories: UILabel!
+    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var foodItemsPickerView: UIPickerView!
     
     var pickerData:[String] = [String]()
     
@@ -52,6 +54,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         //storing items in pickerview
     }
     
-    dailyCalories.text = "\(dailies)"
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+       print(pickerData[row])
+    }
+    
+//    dailyCalories.text = "\(dailies)"
     
 }
