@@ -7,11 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController{
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+    
     var foods : [FoodItems] = []
     var dailies = 0
-    
-    @IBOutlet weak var foodItemsPickerView: UIPickerView!
     
     @IBOutlet weak var dailyCalories: UILabel!
     
@@ -34,14 +33,23 @@ class ViewController: UIViewController{
         
         pickerData = ["num 1","num 2","num 3"]
     }
-//    override func didReceiveMemoryWarning() {
-//            super.didReceiveMemoryWarning()
-//    }
-    extension ViewController: UIPickerViewDataSource{
-        
+    override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
     }
-    extension ViewController: UIPickerViewDelegate{
-        
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+        //how many wheels
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+        //how many elements
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+        //storing items in pickerview
     }
     
     dailyCalories.text = "\(dailies)"
