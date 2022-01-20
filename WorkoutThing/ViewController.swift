@@ -11,6 +11,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var foods : [FoodItems] = []
     var dailies = 0
+    @IBOutlet weak var newFood: UITextField!
+    @IBOutlet weak var newCals: UITextField!
     
     @IBOutlet weak var dailyCalories: UILabel!
     @IBOutlet weak var testLabel: UILabel!
@@ -56,6 +58,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
        print(foods[row])
+    }
+    @IBAction func newButton(_ sender: Any) {
+        foods.append(FoodItems.init(food: "\(newFood)", cals: newCals))
     }
     
 //    dailyCalories.text = "\(dailies)"
