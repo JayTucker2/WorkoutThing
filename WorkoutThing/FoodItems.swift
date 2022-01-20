@@ -1,7 +1,9 @@
 import Foundation
 class FoodItems{
-    init(foods: String, cals: Int) {
-        var asItems = foods
-        var asCals = cals
+    var food : String
+    var cals : Int
+    init(food: String, cals: Int) {
+        self.food = food
+        self.cals = cals
     }
 }

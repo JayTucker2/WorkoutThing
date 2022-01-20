@@ -19,16 +19,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var pickerData:[String] = [String]()
     
     override func viewDidLoad() {
-        foods.append(FoodItems.init(foods: "Steak", cals: 679))
-        foods.append(FoodItems.init(foods: "Chicken", cals: 231))
-        foods.append(FoodItems.init(foods: "Rice", cals: 206))
-        foods.append(FoodItems.init(foods: "Cheeseburger", cals: 535))
-        foods.append(FoodItems.init(foods: "Pizza(Per Slice)", cals: 285))
-        foods.append(FoodItems.init(foods: "Turkey(Per Slice)", cals: 54))
-        foods.append(FoodItems.init(foods: "Potatoes(Per Potato)", cals: 163))
-        foods.append(FoodItems.init(foods: "Spaghetti", cals: 221))
-        foods.append(FoodItems.init(foods: "Ham(Per Slice)", cals: 263))
-        foods.append(FoodItems.init(foods: "Cup Ramen", cals: 188))
+        foods.append(FoodItems.init(food: "Steak", cals: 679))
+        foods.append(FoodItems.init(food: "Chicken", cals: 231))
+        foods.append(FoodItems.init(food: "Rice", cals: 206))
+        foods.append(FoodItems.init(food: "Cheeseburger", cals: 535))
+        foods.append(FoodItems.init(food: "Pizza(Per Slice)", cals: 285))
+        foods.append(FoodItems.init(food: "Turkey(Per Slice)", cals: 54))
+        foods.append(FoodItems.init(food: "Potatoes(Per Potato)", cals: 163))
+        foods.append(FoodItems.init(food: "Spaghetti", cals: 221))
+        foods.append(FoodItems.init(food: "Ham(Per Slice)", cals: 263))
+        foods.append(FoodItems.init(food: "Cup Ramen", cals: 188))
       
         self.foodItemsPickerView.delegate = self
         self.foodItemsPickerView.dataSource = self
@@ -45,17 +45,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        return foods.count
         //how many elements
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        return foods[row].food
         //storing items in pickerview
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       print(pickerData[row])
+       print(foods[row])
     }
     
 //    dailyCalories.text = "\(dailies)"
