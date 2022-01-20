@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
     var foods : [FoodItems] = []
+    var userEats : [FoodItems] = []
     var dailies = 0
     @IBOutlet weak var newFood: UITextField!
     @IBOutlet weak var newCals: UITextField!
@@ -17,8 +18,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var dailyCalories: UILabel!
     @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var foodItemsPickerView: UIPickerView!
-    
-    var pickerData:[String] = [String]()
     
     override func viewDidLoad() {
         foods.append(FoodItems.init(food: "Steak", cals: 679))
@@ -35,7 +34,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.foodItemsPickerView.delegate = self
         self.foodItemsPickerView.dataSource = self
         
-        pickerData = ["num 1","num 2","num 3"]
     }
     override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
@@ -58,11 +56,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
        print(foods[row])
+        testLabel.text = String(foods[row].cals)
     }
     @IBAction func newButton(_ sender: Any) {
         foods.append(FoodItems.init(food: "\(newFood)", cals: newCals))
     }
     
 //    dailyCalories.text = "\(dailies)"
+    
+    @IBAction func addToNewList(_ sender: UIButton) {
+        
+     //   userEats.append(foods)
+        
+    }
+
     
 }
