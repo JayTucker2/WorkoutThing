@@ -12,8 +12,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var foods : [FoodItems] = []
     var userEats : [FoodItems] = []
     var dailies = 0
-    @IBOutlet weak var newFood: UITextField!
-    @IBOutlet weak var newCals: UITextField!
+    @IBOutlet weak var textField1: UITextField!
+    @IBOutlet weak var textField2: UITextField!
     
     @IBOutlet weak var dailyCalories: UILabel!
     @IBOutlet weak var testLabel: UILabel!
@@ -59,7 +59,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         testLabel.text = String(foods[row].cals)
     }
     @IBAction func newButton(_ sender: Any) {
-        foods.append(FoodItems.init(food: "\(newFood)", cals: newCals))
+        var newFood = textField1.text
+        var newCals : Int? = Int(textField2.text!) ?? 0
+        if newCals == 0{
+            let alert = UIAlertController(title: "Error", message: "Please enter a valid number.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            print("i work")
+        }
+        else{
+            foods.append(FoodItems.init(food: "\(newFood)", cals: Int(newCals!)))
+            print("i dont work")
+        }
+            
+        
+         
     }
     
 //    dailyCalories.text = "\(dailies)"

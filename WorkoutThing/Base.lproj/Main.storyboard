@@ -75,7 +75,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltO-11-RLQ">
-                                <rect key="frame" x="172" y="452" width="54" height="31"/>
+                                <rect key="frame" x="164" y="452" width="70" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Add!"/>
@@ -91,9 +91,9 @@
                     <connections>
                         <outlet property="dailyCalories" destination="rZW-lf-pao" id="faJ-IU-Txv"/>
                         <outlet property="foodItemsPickerView" destination="gZz-0u-odQ" id="Uch-8A-So3"/>
-                        <outlet property="newCals" destination="lgy-ja-gRd" id="JZU-Y2-gAS"/>
-                        <outlet property="newFood" destination="0dT-hh-dUP" id="pkB-xQ-tzh"/>
                         <outlet property="testLabel" destination="4wb-sF-ZJa" id="6xs-MH-Sbb"/>
+                        <outlet property="textField1" destination="0dT-hh-dUP" id="UBx-wA-A7x"/>
+                        <outlet property="textField2" destination="lgy-ja-gRd" id="TeW-Wl-Jum"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
