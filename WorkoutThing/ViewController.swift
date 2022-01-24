@@ -63,11 +63,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         var newCals : Int? = Int(textField2.text!) ?? 0
         if newCals == 0{
             let alert = UIAlertController(title: "Error", message: "Please enter a valid number.", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             print("i work")
         }
         else{
             foods.append(FoodItems.init(food: "\(newFood)", cals: Int(newCals!)))
+            foodItemsPickerView.reloadAllComponents()
             print("i dont work")
         }
             
