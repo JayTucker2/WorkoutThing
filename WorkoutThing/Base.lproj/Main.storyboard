@@ -104,6 +104,33 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="67.633928571428569"/>
         </scene>
+        <!--dailyVC-->
+        <scene sceneID="CsO-tb-NTh">
+            <objects>
+                <viewController title="dailyVC" id="7dQ-xZ-a6z" customClass="dailyVCViewController" customModule="WorkoutThing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fFj-z8-A6h" customClass="dailyVC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lvH-rv-3hF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7qt-iw-S8d"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7qt-iw-S8d" firstAttribute="trailing" secondItem="lvH-rv-3hF" secondAttribute="trailing" id="209-vJ-9An"/>
+                            <constraint firstItem="lvH-rv-3hF" firstAttribute="top" secondItem="7qt-iw-S8d" secondAttribute="top" id="AeY-iX-UK6"/>
+                            <constraint firstItem="7qt-iw-S8d" firstAttribute="bottom" secondItem="lvH-rv-3hF" secondAttribute="bottom" id="Ucv-Vh-Zfa"/>
+                            <constraint firstItem="lvH-rv-3hF" firstAttribute="leading" secondItem="7qt-iw-S8d" secondAttribute="leading" id="ha8-Xv-WFI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pxE-Qm-gwI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1720" y="68"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CvN-jD-Hp8">
             <objects>
