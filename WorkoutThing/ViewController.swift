@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
+    
+    
     var foods : [FoodItems] = []
     var userEats : [FoodItems] = []
     var dailies = 0
@@ -34,6 +36,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.foodItemsPickerView.delegate = self
         self.foodItemsPickerView.dataSource = self
         
+        func save(){
+            let encoder = JSONEncoder()
+            if let encoded = try?
+                encoder.encode(foods){
+                
+            }
     }
     override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
@@ -59,18 +67,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         testLabel.text = String(foods[row].cals)
     }
     @IBAction func newButton(_ sender: Any) {
-        var newFood = textField1.text
+        var newFood : String? = String(textField1.text!) ?? ""
         var newCals : Int? = Int(textField2.text!) ?? 0
-        if newCals == 0{
+        if newFood == ""{ let alert = UIAlertController(title: "Error", message: "Please enter a food", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if newCals == 0{
             let alert = UIAlertController(title: "Error", message: "Please enter a valid number.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            print("i work")
+            
         }
         else{
-            foods.append(FoodItems.init(food: "\(newFood)", cals: Int(newCals!)))
+            foods.append(FoodItems.init(food: "\(newFood!)", cals: Int(newCals!)))
+            print(newFood)
             foodItemsPickerView.reloadAllComponents()
-            print("i dont work")
         }
         if newFood == nil{
             let alert = UIAlertController(title: "Error", message: "Please enter a valid food", preferredStyle: .alert)
