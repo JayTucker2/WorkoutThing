@@ -72,6 +72,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             foodItemsPickerView.reloadAllComponents()
             print("i dont work")
         }
+        if newFood == nil{
+            let alert = UIAlertController(title: "Error", message: "Please enter a valid food", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
             
         
          
@@ -79,11 +84,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
 //    dailyCalories.text = "\(dailies)"
     
-    @IBAction func addToNewList(_ sender: UIButton) {
-        
-     //   userEats.append(foods)
-        
-    }
 
     
 }
