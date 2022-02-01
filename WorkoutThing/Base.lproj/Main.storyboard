@@ -76,7 +76,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Add!"/>
                                 <connections>
-                                    <action selector="newButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ST-pg-qmB"/>
+                                    <action selector="newButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PDM-Ec-oK0"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hjj-d5-8IY">
