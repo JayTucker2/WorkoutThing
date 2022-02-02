@@ -1,5 +1,5 @@
 import Foundation
-class FoodItems{
+class FoodItems : Codable{
     var food : String
     var cals : Int
     init(food: String, cals: Int) {

@@ -21,6 +21,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var foodItemsPickerView: UIPickerView!
     
+    func save(){
+        let encoder = JSONEncoder()
+        if let encoded = try?
+            encoder.encode(foods){
+            UserDefaults.standard.set(encoded, forKey: "theFoods")
+        }
+    }
     override func viewDidLoad() {
         foods.append(FoodItems.init(food: "Steak", cals: 679))
         foods.append(FoodItems.init(food: "Chicken", cals: 231))
@@ -33,16 +40,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         foods.append(FoodItems.init(food: "Ham(Per Slice)", cals: 263))
         foods.append(FoodItems.init(food: "Cup Ramen", cals: 188))
       
+        if let items = UserDefaults.standard.data(forKey: "theFoods"){
+            let decoder = JSONDecoder()
+            if let decoded = try?
+                decoder.decode([FoodItems].self, from: items){
+                foods = decoded
+            }
+        }
         self.foodItemsPickerView.delegate = self
         self.foodItemsPickerView.dataSource = self
     }
-//        func save(){
-//            let encoder = JSONEncoder()
-//            if let encoded = try?
-//                encoder.encode(foods){
-                
-     //       }
-    //}
     override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
     }
@@ -91,6 +98,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 foods.append(FoodItems.init(food: "\(newFood!)", cals: Int(newCals!)))
                 print(newFood)
                 foodItemsPickerView.reloadAllComponents()
+                save()
             }
             if newFood == nil{
                 let alert = UIAlertController(title: "Error", message: "Please enter a valid food", preferredStyle: .alert)
@@ -101,5 +109,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
              
         }
+    
 }
 
