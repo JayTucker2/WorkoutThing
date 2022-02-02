@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var foods : [FoodItems] = []
     var userEats : [FoodItems] = []
     var dailies = 0
+    var calls = 0
+    var selectedRow = 0
     @IBOutlet weak var textField1: UITextField!
     @IBOutlet weak var textField2: UITextField!
     
@@ -22,6 +24,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var foodItemsPickerView: UIPickerView!
     
     override func viewDidLoad() {
+        dailyCalories.text = "\(calls)"
         foods.append(FoodItems.init(food: "Steak", cals: 679))
         foods.append(FoodItems.init(food: "Chicken", cals: 231))
         foods.append(FoodItems.init(food: "Rice", cals: 206))
@@ -63,6 +66,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        selectedRow = row
+        
        print(foods[row])
         testLabel.text = String(foods[row].cals)
     }
@@ -101,5 +107,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
              
         }
+    
+    @IBAction func addToTotalButton(_ sender: UIButton) {
+        calls = calls + foods[selectedRow].cals
+        dailyCalories.text = "\(calls)"
+        
+    }
+    @IBAction func clearCalsButton(_ sender: UIButton) {
+        calls = 0
+        dailyCalories.text = "\(calls)"
+    }
+    
+    
 }
 
