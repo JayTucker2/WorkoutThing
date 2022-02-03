@@ -159,7 +159,7 @@
                             <constraint firstItem="lvH-rv-3hF" firstAttribute="leading" secondItem="7qt-iw-S8d" secondAttribute="leading" id="ha8-Xv-WFI"/>
                         </constraints>
                         <connections>
-                            <outlet property="tableCell" destination="7xa-1k-jBK" id="nLI-x1-tlM"/>
+                            <outlet property="tableOutlet" destination="lvH-rv-3hF" id="EwZ-Oh-aTl"/>
                         </connections>
                     </view>
                 </viewController>
