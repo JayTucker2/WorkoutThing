@@ -14,7 +14,7 @@ class dailyVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var tableOutlet: UITableView!
     var dates : [String] = []
     
-    
+    let date = Date()
     override func viewDidLoad() {
         dates.append("2/1")
         super.viewDidLoad()

@@ -105,8 +105,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 print(newFood)
                 foodItemsPickerView.reloadAllComponents()
                 save()
-                let now = Date()
-                print(now)
+                
             }
             if newFood == nil{
                 let alert = UIAlertController(title: "Error", message: "Please enter a valid food", preferredStyle: .alert)
