@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6906E08427AB691F0099F260 /* dailyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6906E08327AB691F0099F260 /* dailyVC.swift */; };
 		B94AD0D7278DBD5B0062CD61 /* FoodItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94AD0D6278DBD5B0062CD61 /* FoodItems.swift */; };
+		B9621FD027B2ABD3003D3381 /* DailyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621FCF27B2ABD3003D3381 /* DailyTable.swift */; };
+		B97A1EBD27B2B0B6006239F8 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97A1EBC27B2B0B6006239F8 /* DatePicker.swift */; };
 		B98C76D3278C76B70070F15C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98C76D2278C76B70070F15C /* AppDelegate.swift */; };
 		B98C76D5278C76B70070F15C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98C76D4278C76B70070F15C /* SceneDelegate.swift */; };
 		B98C76D7278C76B70070F15C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98C76D6278C76B70070F15C /* ViewController.swift */; };
@@ -19,8 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6906E08327AB691F0099F260 /* dailyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dailyVC.swift; sourceTree = "<group>"; };
 		B94AD0D6278DBD5B0062CD61 /* FoodItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItems.swift; sourceTree = "<group>"; };
+		B9621FCF27B2ABD3003D3381 /* DailyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTable.swift; sourceTree = "<group>"; };
+		B97A1EBC27B2B0B6006239F8 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		B98C76CF278C76B70070F15C /* WorkoutThing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutThing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98C76D2278C76B70070F15C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B98C76D4278C76B70070F15C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,9 +67,10 @@
 				B98C76D2278C76B70070F15C /* AppDelegate.swift */,
 				B98C76D4278C76B70070F15C /* SceneDelegate.swift */,
 				B98C76D6278C76B70070F15C /* ViewController.swift */,
+				B9621FCF27B2ABD3003D3381 /* DailyTable.swift */,
 				B94AD0D6278DBD5B0062CD61 /* FoodItems.swift */,
 				B98C76D8278C76B70070F15C /* Main.storyboard */,
-				6906E08327AB691F0099F260 /* dailyVC.swift */,
+				B97A1EBC27B2B0B6006239F8 /* DatePicker.swift */,
 				B98C76DE278C76BB0070F15C /* Assets.xcassets */,
 				B98C76E0278C76BB0070F15C /* LaunchScreen.storyboard */,
 				B98C76E3278C76BB0070F15C /* Info.plist */,
@@ -147,7 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6906E08427AB691F0099F260 /* dailyVC.swift in Sources */,
+				B9621FD027B2ABD3003D3381 /* DailyTable.swift in Sources */,
+				B97A1EBD27B2B0B6006239F8 /* DatePicker.swift in Sources */,
 				B98C76D7278C76B70070F15C /* ViewController.swift in Sources */,
 				B98C76D3278C76B70070F15C /* AppDelegate.swift in Sources */,
 				B98C76DD278C76B70070F15C /* WorkoutThing.xcdatamodeld in Sources */,
