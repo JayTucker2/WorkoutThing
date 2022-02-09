@@ -12,28 +12,13 @@ class DailyTable: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     
     @IBOutlet weak var tableOutlet: UITableView!
-    var dates : [String] = []
-    let dateArray = ["1 February, 2022", "2 February, 2022", "3 February, 2022"]
-    var convertedArray : [Date] = []
-    var dateFormatter = DateFormatter()
+    var dates : [DateClass] = []
     
-    
-    let date = Date()
     override func viewDidLoad() {
         tableOutlet.delegate = self
         tableOutlet.dataSource = self
         
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        
-        for dat in dateArray {
-            var date = dateFormatter.date(from: dat)
-            if let date = date{
-                convertedArray.append(date)
-            }
-        }
-        var ready = convertedArray.sorted(by: {$0.compare($1) == .orderedDescending})
-        print(ready)
-        dates.append("2/1")
+        dates.append(DateClass.init(date: "09/02/2022"))
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.

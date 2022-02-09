@@ -12,7 +12,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     var foods : [FoodItems] = []
-    var userEats : [FoodItems] = []
     var dailies = 0
     var calls = 0
     var selectedRow = 0

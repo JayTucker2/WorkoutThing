@@ -17,6 +17,7 @@
 		B98C76DD278C76B70070F15C /* WorkoutThing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B98C76DB278C76B70070F15C /* WorkoutThing.xcdatamodeld */; };
 		B98C76DF278C76BB0070F15C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B98C76DE278C76BB0070F15C /* Assets.xcassets */; };
 		B98C76E2278C76BB0070F15C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B98C76E0278C76BB0070F15C /* LaunchScreen.storyboard */; };
+		B9F7921B27B3FDE00093CA18 /* DateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F7921A27B3FDE00093CA18 /* DateClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B98C76DE278C76BB0070F15C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B98C76E1278C76BB0070F15C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B98C76E3278C76BB0070F15C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9F7921A27B3FDE00093CA18 /* DateClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				B94AD0D6278DBD5B0062CD61 /* FoodItems.swift */,
 				B98C76D8278C76B70070F15C /* Main.storyboard */,
 				B97A1EBC27B2B0B6006239F8 /* DatePicker.swift */,
+				B9F7921A27B3FDE00093CA18 /* DateClass.swift */,
 				B98C76DE278C76BB0070F15C /* Assets.xcassets */,
 				B98C76E0278C76BB0070F15C /* LaunchScreen.storyboard */,
 				B98C76E3278C76BB0070F15C /* Info.plist */,
@@ -156,6 +159,7 @@
 				B98C76D3278C76B70070F15C /* AppDelegate.swift in Sources */,
 				B98C76DD278C76B70070F15C /* WorkoutThing.xcdatamodeld in Sources */,
 				B98C76D5278C76B70070F15C /* SceneDelegate.swift in Sources */,
+				B9F7921B27B3FDE00093CA18 /* DateClass.swift in Sources */,
 				B94AD0D7278DBD5B0062CD61 /* FoodItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
