@@ -14,13 +14,18 @@ class DatePicker: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+     
         // Do any additional setup after loading the view.
+        if #available(iOS 14, *){
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.sizeToFit()
+        }
     }
     @IBAction func datePickerChanged(_ sender: Any) {
         let dateFormatter = DateFormatter()
-        
+
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        
+
         let strDate = dateFormatter.string(from: datePicker.date)
         string = strDate
     }
@@ -28,4 +33,7 @@ class DatePicker: UIViewController {
         let nvc = segue.destination as! DailyTable
         nvc.inc = "\(string)"
     }
+    @IBAction func createButton(_ sender: Any) {
+    }
+    
 }
