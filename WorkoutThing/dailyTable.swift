@@ -13,7 +13,7 @@ class DailyTable: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var tableOutlet: UITableView!
     var dates : [DateClass] = []
-    
+    var inc = ""
     override func viewDidLoad() {
         tableOutlet.delegate = self
         tableOutlet.dataSource = self
@@ -29,7 +29,7 @@ class DailyTable: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableOutlet.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-        cell.textLabel?.text = dates[indexPath.row]
+        cell.textLabel?.text = dates[indexPath.row].date
         cell.detailTextLabel?.text = "Hi"
         return cell
     }
