@@ -10,7 +10,7 @@ import UIKit
 class DatePicker: UIViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker!
-    
+    var string = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +22,10 @@ class DatePicker: UIViewController {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         
         let strDate = dateFormatter.string(from: datePicker.date)
-        DateClass.init(date: strDate)
+        string = strDate
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nvc = segue.destination as! DailyTable
+        nvc.inc = "\(string)"
+    }
 }
