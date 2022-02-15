@@ -18,10 +18,17 @@ class DailyTable: UIViewController, UITableViewDelegate, UITableViewDataSource{
         tableOutlet.delegate = self
         tableOutlet.dataSource = self
         
-        dates.append(DateClass.init(date: "09/02/2022"))
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if DatePicker.string == ""{
+            tableOutlet.reloadData()
+        }
+        else {
+            dates.append(DateClass.init(date: "\(DatePicker.string)"))
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dates.count

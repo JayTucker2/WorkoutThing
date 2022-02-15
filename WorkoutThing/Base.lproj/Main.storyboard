@@ -205,7 +205,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Create Day"/>
                                 <connections>
-                                    <action selector="createButton:" destination="CQW-lV-hn1" eventType="touchUpInside" id="xYB-mZ-C0d"/>
+                                    <action selector="createButton:" destination="CQW-lV-hn1" eventType="touchUpInside" id="on0-5c-zxe"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="F1H-eq-fQ1">
