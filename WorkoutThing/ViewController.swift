@@ -71,7 +71,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return foods[row].food
+        return "\(foods[row].food): \(foods[row].cals) calories"
         //storing items in pickerview
     }
     
@@ -80,7 +80,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         selectedRow = row
         
        print(foods[row])
-        testLabel.text = String(foods[row].cals)
     }
     
     
