@@ -33,6 +33,7 @@ class DailyTable: UIViewController, UITableViewDelegate, UITableViewDataSource{
         cell.detailTextLabel?.text = "Hi"
         return cell
     }
-
-
+    func tableView(_ tableView: UITableView, didSelectRowAt: IndexPath){
+        performSegue(withIdentifier: "Segue1", sender: self)
+    }
 }
