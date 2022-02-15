@@ -51,6 +51,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         self.foodItemsPickerView.delegate = self
         self.foodItemsPickerView.dataSource = self
+        
+        let sortedFoods = foods.sorted{ $0.food < $1.food }
+        print(sortedFoods)
+        
     }
     override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
