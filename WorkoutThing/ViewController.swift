@@ -51,6 +51,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         self.foodItemsPickerView.delegate = self
         self.foodItemsPickerView.dataSource = self
+        
+        let sortedFoods = foods.sorted{ $0.food < $1.food }
+        print(sortedFoods)
+        
     }
     override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
@@ -67,7 +71,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return foods[row].food
+        return "\(foods[row].food): \(foods[row].cals) calories"
         //storing items in pickerview
     }
     
@@ -76,7 +80,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         selectedRow = row
         
        print(foods[row])
-        testLabel.text = String(foods[row].cals)
     }
     
     
