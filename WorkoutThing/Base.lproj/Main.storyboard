@@ -184,6 +184,7 @@
                     <navigationItem key="navigationItem" id="ge9-hS-I0U"/>
                     <connections>
                         <outlet property="tableOutlet" destination="Cjm-98-Nd5" id="XK4-68-rDB"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="Segue1" id="5qv-9v-WIx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0Z-2p-Nv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
