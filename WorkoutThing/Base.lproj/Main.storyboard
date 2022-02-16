@@ -154,7 +154,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Add Day"/>
                                 <connections>
-                                    <segue destination="CQW-lV-hn1" kind="show" id="uca-xc-H8L"/>
+                                    <segue destination="CQW-lV-hn1" kind="show" identifier="datePicker" id="uca-xc-H8L"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -177,9 +177,11 @@
                     <connections>
                         <outlet property="tableOutlet" destination="Cjm-98-Nd5" id="XK4-68-rDB"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="Segue1" id="5qv-9v-WIx"/>
+                        <segue destination="4rb-XV-1Ew" kind="unwind" unwindAction="unwind:" id="dOr-Ed-GUS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0Z-2p-Nv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="4rb-XV-1Ew" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1823.1884057971015" y="-384.375"/>
         </scene>
