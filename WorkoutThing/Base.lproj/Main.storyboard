@@ -177,11 +177,9 @@
                     <connections>
                         <outlet property="tableOutlet" destination="Cjm-98-Nd5" id="XK4-68-rDB"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="Segue1" id="5qv-9v-WIx"/>
-                        <segue destination="4rb-XV-1Ew" kind="unwind" unwindAction="unwind:" id="dOr-Ed-GUS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0Z-2p-Nv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="4rb-XV-1Ew" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1823.1884057971015" y="-384.375"/>
         </scene>
@@ -200,6 +198,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Create Day"/>
                                 <connections>
                                     <action selector="createButton:" destination="CQW-lV-hn1" eventType="touchUpInside" id="on0-5c-zxe"/>
+                                    <segue destination="LBY-w1-ogP" kind="unwind" unwindAction="unwindToTable:" id="b6n-F9-LYf"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="F1H-eq-fQ1">
@@ -219,6 +218,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ln-oR-z1h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="LBY-w1-ogP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2771" y="-81"/>
         </scene>

@@ -17,10 +17,14 @@ class DailyTable: UIViewController, UITableViewDelegate, UITableViewDataSource{
     override func viewDidLoad() {
         tableOutlet.delegate = self
         tableOutlet.dataSource = self
-        
+        print(DatePicker.string)
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    @IBAction func unwindToTable(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
     }
     override func viewWillAppear(_ animated: Bool) {
         if DatePicker.string == ""{
@@ -28,6 +32,8 @@ class DailyTable: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }
         else {
             dates.append(DateClass.init(date: "\(DatePicker.string)"))
+            tableOutlet.reloadData()
+            DatePicker.string = ""
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -14,12 +14,12 @@ class DatePicker: UIViewController {
     var tempString = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
      
         // Do any additional setup after loading the view.
         if #available(iOS 14, *){
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.sizeToFit()
+            
         }
     }
     @IBAction func datePickerChanged(_ sender: Any) {
@@ -33,10 +33,9 @@ class DatePicker: UIViewController {
     
     @IBAction func createButton(_ sender: Any) {
         DatePicker.string = tempString
+        print(tempString)
         tempString = ""
-        performSegue(withIdentifier: "unwindTodatePicker", sender: self)
-    }
-    @IBAction func unwind(_ seg: UIStoryboardSegue){
         
     }
+    
 }
