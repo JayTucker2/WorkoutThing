@@ -13,6 +13,15 @@ class DatePicker: UIViewController {
     static var string = ""
     var tempString = ""
     override func viewDidLoad() {
+//
+//        DatePicker.string = tempString
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        tempString = dateFormatter.string(from: datePicker.date)
+        print(tempString)
+        DatePicker.string = tempString
+        print(DatePicker.string)
+        tempString = ""
         super.viewDidLoad()
      
         // Do any additional setup after loading the view.
@@ -32,10 +41,10 @@ class DatePicker: UIViewController {
     }
     
     @IBAction func createButton(_ sender: Any) {
+        if DatePicker.string == ""{
         DatePicker.string = tempString
-        print(tempString)
         tempString = ""
-        
+        }
     }
     
 }
