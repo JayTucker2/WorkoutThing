@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class DateClass{
+class DateClass : Codable{
     var date : String
     init(date: String) {
         self.date = date
