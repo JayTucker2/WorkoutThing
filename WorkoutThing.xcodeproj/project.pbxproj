@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B93E9F8827C6743F00359490 /* CalorieCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93E9F8727C6743F00359490 /* CalorieCounter.swift */; };
 		B94AD0D7278DBD5B0062CD61 /* FoodItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94AD0D6278DBD5B0062CD61 /* FoodItems.swift */; };
 		B9621FD027B2ABD3003D3381 /* DailyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9621FCF27B2ABD3003D3381 /* DailyTable.swift */; };
 		B97A1EBD27B2B0B6006239F8 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97A1EBC27B2B0B6006239F8 /* DatePicker.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B93E9F8727C6743F00359490 /* CalorieCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCounter.swift; sourceTree = "<group>"; };
 		B94AD0D6278DBD5B0062CD61 /* FoodItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItems.swift; sourceTree = "<group>"; };
 		B9621FCF27B2ABD3003D3381 /* DailyTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTable.swift; sourceTree = "<group>"; };
 		B97A1EBC27B2B0B6006239F8 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				B98C76D4278C76B70070F15C /* SceneDelegate.swift */,
 				B98C76D6278C76B70070F15C /* ViewController.swift */,
 				B9621FCF27B2ABD3003D3381 /* DailyTable.swift */,
+				B93E9F8727C6743F00359490 /* CalorieCounter.swift */,
 				B94AD0D6278DBD5B0062CD61 /* FoodItems.swift */,
 				B98C76D8278C76B70070F15C /* Main.storyboard */,
 				B97A1EBC27B2B0B6006239F8 /* DatePicker.swift */,
@@ -156,6 +159,7 @@
 				B9621FD027B2ABD3003D3381 /* DailyTable.swift in Sources */,
 				B97A1EBD27B2B0B6006239F8 /* DatePicker.swift in Sources */,
 				B98C76D7278C76B70070F15C /* ViewController.swift in Sources */,
+				B93E9F8827C6743F00359490 /* CalorieCounter.swift in Sources */,
 				B98C76D3278C76B70070F15C /* AppDelegate.swift in Sources */,
 				B98C76DD278C76B70070F15C /* WorkoutThing.xcdatamodeld in Sources */,
 				B98C76D5278C76B70070F15C /* SceneDelegate.swift in Sources */,

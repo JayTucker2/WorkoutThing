@@ -17,9 +17,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var selectedRow = 0
     @IBOutlet weak var textField1: UITextField!
     @IBOutlet weak var textField2: UITextField!
-    
+    @IBOutlet weak var tableOutlet: UITableView!
     @IBOutlet weak var dailyCalories: UILabel!
-    @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var foodItemsPickerView: UIPickerView!
     
     func save(){
@@ -126,6 +125,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func clearCalsButton(_ sender: UIButton) {
         calls = 0
         dailyCalories.text = "\(calls)"
+    }
+    @IBAction func removeButton(_ sender: Any) {
+            foods.remove(at: selectedRow)
+            foodItemsPickerView.reloadAllComponents()
+        save()
     }
     
     
