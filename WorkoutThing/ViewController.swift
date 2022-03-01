@@ -51,9 +51,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.foodItemsPickerView.delegate = self
         self.foodItemsPickerView.dataSource = self
         
-        let sortedFoods = foods.sorted{ $0.food < $1.food }
-        print(sortedFoods)
-        
+        foods.sort{ $0.food < $1.food }
     }
     override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
@@ -88,20 +86,29 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func newButton(_ sender: Any) {
         
-            var newFood : String? = String(textField1.text!) ?? ""
-            var newCals : Int? = Int(textField2.text!) ?? 0
-            if newFood == ""{ let alert = UIAlertController(title: "Error", message: "Please enter a food", preferredStyle: .alert)
+            var newFood : String = String(textField1.text!)
+            var newCalsString : String = (textField2.text!)
+            var newCals = 0
+            newFood = newFood.prefix(1).uppercased() + newFood.suffix(newFood.count - 1)
+        
+        
+        
+
+        
+        if newFood == ""{ let alert = UIAlertController(title: "Error", message: "Please enter a food", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
-            else if newCals == 0{
+        if let temp = Int(newCalsString){
+            newCals = temp
+        } else {
                 let alert = UIAlertController(title: "Error", message: "Please enter a valid number.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 
             }
             else{
-                foods.append(FoodItems.init(food: "\(newFood!)", cals: Int(newCals!)))
+                foods.append(FoodItems.init(food: "\(newFood)", cals: Int(newCals)))
                 print(newFood)
                 foodItemsPickerView.reloadAllComponents()
                 save()
@@ -112,7 +119,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
-                
+        foods.sort{ $0.food < $1.food }
+        foodItemsPickerView.reloadAllComponents()
+        
+        
             
              
         }
