@@ -7,11 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource{
+    
+    
     
     
     
     var foods : [FoodItems] = []
+    var eatenFoods : [FoodItems] = []
     var dailies = 0
     var calls = 0
     var selectedRow = 0
@@ -116,11 +119,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
              
         }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return eatenFoods.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableOutlet.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
+            cell.textLabel?.text = eatenFoods[indexPath.row].food
+            cell.detailTextLabel?.text = String(eatenFoods[indexPath.row].cals)
+            return cell
+    }
     @IBAction func addToTotalButton(_ sender: UIButton) {
         calls = calls + foods[selectedRow].cals
         dailyCalories.text = "\(calls)"
-        
+        eatenFoods.append(FoodItems.init(food: foods[selectedRow].food, cals: foods[selectedRow].cals))
+        tableOutlet.reloadData()
     }
     @IBAction func clearCalsButton(_ sender: UIButton) {
         calls = 0
