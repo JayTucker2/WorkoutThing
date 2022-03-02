@@ -16,6 +16,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var foods : [FoodItems] = []
     var eatenFoods : [FoodItems] = []
     var dailies = 0
+//    var eatenFood : String
+//    var eatenCals = 0
     var calls = 0
     var selectedRow = 0
     @IBOutlet weak var textField1: UITextField!
@@ -29,6 +31,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if let encoded = try?
             encoder.encode(foods){
             UserDefaults.standard.set(encoded, forKey: "theFoods")
+        }
+    }
+    func save2(){
+        let encoder = JSONEncoder()
+        if let encoded = try?
+            encoder.encode(eatenFoods){
+            UserDefaults.standard.set(encoded, forKey: "eatenFoods")
         }
     }
     override func viewDidLoad() {
@@ -51,8 +60,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 foods = decoded
             }
         }
+        if let items = UserDefaults.standard.data(forKey: "eatenFoods"){
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([FoodItems].self, from: items){
+                eatenFoods = decoded
+            }
+        }
         self.foodItemsPickerView.delegate = self
         self.foodItemsPickerView.dataSource = self
+        
+        self.tableOutlet.delegate = self
+        self.tableOutlet.dataSource = self
+        let sortedFoods = foods.sorted{ $0.food < $1.food }
+        print(sortedFoods)
         
         foods.sort{ $0.food < $1.food }
     }
@@ -135,15 +155,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             cell.detailTextLabel?.text = String(eatenFoods[indexPath.row].cals)
             return cell
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            eatenFoods.remove(at: indexPath.row)
+            tableOutlet.reloadData()
+            save2()
+            //calls = calls - eatenFoods[indexPath.row].cals
+    }
+}
     @IBAction func addToTotalButton(_ sender: UIButton) {
         calls = calls + foods[selectedRow].cals
         dailyCalories.text = "\(calls)"
-        eatenFoods.append(FoodItems.init(food: foods[selectedRow].food, cals: foods[selectedRow].cals))
+//        eatenFoods = String(foods[selectedRow].food)
+//        eatenCals = foods[selectedRow].cals
+        eatenFoods.append(foods[selectedRow])
+        print("hi")
+        print(eatenFoods[0].food)
         tableOutlet.reloadData()
     }
     @IBAction func clearCalsButton(_ sender: UIButton) {
         calls = 0
         dailyCalories.text = "\(calls)"
+        eatenFoods.removeAll()
     }
     @IBAction func removeButton(_ sender: Any) {
         
