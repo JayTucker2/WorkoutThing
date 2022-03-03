@@ -180,23 +180,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     @IBAction func removeButton(_ sender: Any) {
         
-//        let alert = UIAlertController(title: "Error", message: "Please enter a valid food", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//        self.present(alert, animated: true, completion: nil)
-        
-        
         let alert = UIAlertController(title: "WARNING", message: "Are you sure you want to remove this item?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        //code for each option in here
+        alert.addAction(UIAlertAction(title: "Remove", style: .default, handler: { [self] action in
+            foods.remove(at: selectedRow)
+            foodItemsPickerView.reloadAllComponents()
+        save()
+        }))
+                                      
+        alert.addAction(UIAlertAction(title: "Keep", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
         
         
         
         
-            foods.remove(at: selectedRow)
-            foodItemsPickerView.reloadAllComponents()
-        save()
+            
     }
     
     
