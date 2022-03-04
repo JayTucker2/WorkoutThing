@@ -136,14 +136,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         addAlert.addAction(UIAlertAction(title: "Add", style: .default, handler: {[self] action in
             foods.append(FoodItems.init(food: "\(newFood)", cals: Int(newCals)))
             print(newFood)
+            foods.sort{ $0.food < $1.food }
             foodItemsPickerView.reloadAllComponents()
             save()
         }))
         addAlert.addAction(UIAlertAction(title: "Don't Add", style: .destructive, handler: nil))
         self.present(addAlert, animated: true, completion: nil)
-        
-        
-        
+    
 //                foods.append(FoodItems.init(food: "\(newFood)", cals: Int(newCals)))
 //                print(newFood)
 //                foodItemsPickerView.reloadAllComponents()
@@ -154,8 +153,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
-        foods.sort{ $0.food < $1.food }
-        foodItemsPickerView.reloadAllComponents()
+        
         
         
             
