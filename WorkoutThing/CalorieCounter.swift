@@ -1,8 +1,10 @@
 import Foundation
 
 class CalorieCounter{
-    var date : String
-    init(date : String) {
-        self.date = date
+    var tCals : String
+    var food : [FoodItems]
+    init(tCals : String, food : [FoodItems]) {
+        self.tCals = tCals
+        self.food = food
     }
 }
