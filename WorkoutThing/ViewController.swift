@@ -122,6 +122,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.present(alert, animated: true, completion: nil)
             return
         }
+        
         newFood = newFood.prefix(1).uppercased() + newFood.suffix(newFood.count - 1)
         if let temp = Int(newCalsString){
             newCals = temp
@@ -131,10 +132,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             return
         }
         
-                foods.append(FoodItems.init(food: "\(newFood)", cals: Int(newCals)))
-                print(newFood)
-                foodItemsPickerView.reloadAllComponents()
-                save()
+        let addAlert = UIAlertController(title: "Confirm", message: "Are you sure you want to add this food?", preferredStyle: .alert)
+        addAlert.addAction(UIAlertAction(title: "Add", style: .default, handler: {[self] action in
+            foods.append(FoodItems.init(food: "\(newFood)", cals: Int(newCals)))
+            print(newFood)
+            foodItemsPickerView.reloadAllComponents()
+            save()
+        }))
+        addAlert.addAction(UIAlertAction(title: "Don't Add", style: .destructive, handler: nil))
+        self.present(addAlert, animated: true, completion: nil)
+        
+        
+        
+//                foods.append(FoodItems.init(food: "\(newFood)", cals: Int(newCals)))
+//                print(newFood)
+//                foodItemsPickerView.reloadAllComponents()
+//                save()
                 
             if newFood == nil{
                 let alert = UIAlertController(title: "Error", message: "Please enter a valid food", preferredStyle: .alert)
@@ -186,9 +199,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         save2()
     }
     @IBAction func removeButton(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "WARNING", message: "Are you sure you want to remove this item?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Keep", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { [self] action in
             foods.remove(at: selectedRow)
             foodItemsPickerView.reloadAllComponents()
         save()
+        }))
+                                      
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        
+        
+        
+            
     }
     override func viewWillDisappear(_ animated: Bool) {
         ViewController.savedCals = calls
