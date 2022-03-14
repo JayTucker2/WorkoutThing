@@ -1,7 +1,10 @@
-//import Foundation
-//
-//class CalorieCounter{
-//    var date : String
-//    var foodItems : [FoodItems]
-//    i
-//}
+import Foundation
+
+class CalorieCounter{
+    var tCals : String
+    var food : [FoodItems]
+    init(tCals : String, food : [FoodItems]) {
+        self.tCals = tCals
+        self.food = food
+    }
+}

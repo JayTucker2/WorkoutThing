@@ -12,13 +12,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     
-    
+    static var savedCals = 0
     var foods : [FoodItems] = []
     var eatenFoods : [FoodItems] = []
     var dailies = 0
-//    var eatenFood : String
-//    var eatenCals = 0
-    var calls = 0
+     var calls = 0
     var selectedRow = 0
     @IBOutlet weak var textField1: UITextField!
     @IBOutlet weak var textField2: UITextField!
@@ -79,7 +77,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        eatenFoods.removeAll()
+        tableOutlet.reloadData()
+        save2()
+        calls = ViewController.savedCals
+    }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
         //how many wheels
@@ -171,7 +174,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             eatenFoods.remove(at: indexPath.row)
             tableOutlet.reloadData()
             save2()
-            //calls = calls - eatenFoods[indexPath.row].cals
+//            calls = calls - Int(eatenFoods
+            dailyCalories.text = "\(calls)"
     }
 }
     @IBAction func addToTotalButton(_ sender: UIButton) {
@@ -183,11 +187,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         print("hi")
         print(eatenFoods[0].food)
         tableOutlet.reloadData()
+        save2()
     }
     @IBAction func clearCalsButton(_ sender: UIButton) {
         calls = 0
         dailyCalories.text = "\(calls)"
         eatenFoods.removeAll()
+        tableOutlet.reloadData()
+        save2()
     }
     @IBAction func removeButton(_ sender: Any) {
         
@@ -208,7 +215,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
             
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        ViewController.savedCals = calls
+        print(ViewController.savedCals)
+    }
     
 }
 
